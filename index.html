@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoort" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>我的個人履歷</title>
+        <link rel="stylesheet" href="style.css"/> 
+        <!--這是一個樣式表，請從 styles.css 載入樣式-->
+    </head>
+    <body>
+
+        <header>
+            <h1>楊雅涵Chrysta</h1>
+            <p>網頁前端工程師</p>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>我是一位轉職中的前端工程師，熱愛打造互動與美觀的網站。</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>✅ HTML</li>
+                <li>✅ CSS</li>
+                <li>✅ JavaScript</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>我的第一個網站</h3>
+                <p>這是一個用 HTML/CSS 製作的個人介紹網頁。</p>
+            </div>
+            <div class="project-card">
+                <h3>待辦清單</h3>
+                <p>一個能新增、刪除待辦事項的小工具</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>📧 scorpius5396@gmail.com | 🌐 <a href="#">GitHub</a></p>
+        </footer>
+
+        <button id="backToTop">⬆️ 回到頂部</button>
+
+    <script>
+
+        const btn=document.getElementById('backToTop');
+
+        window.addEventListener('scroll',()=>{
+            if(window.scrollY > 50){
+                btn.style.display='block';
+            }else{
+                btn.style.display='none';
+            }
+        });
+
+        btn.addEventListener('click',()=>{
+            window.scrollTo({top:0, behavior: 'smooth'});
+        })
+
+    </script>
+    </body>
+</html>
