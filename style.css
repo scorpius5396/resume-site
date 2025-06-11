@@ -134,3 +134,17 @@ footer a {
         padding:10px;
     }
 }
+.skills{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill img{
+    transition: transform 0.3s ease;
+}
+
+.skill img:hover {
+    transform: scale(1.1);
+}
