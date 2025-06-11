@@ -70,12 +70,14 @@ section h2{
     margin-top:20px;
 }
 
-.project-card{
+.project-card:hover{
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
+    tranform: scale(1.05);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3 ease;
     /*
     給元素加上陰影，讓它看起來有浮起來的感覺
     0：水平偏移（陰影不左右移動）
@@ -92,8 +94,13 @@ footer{
     color: #777;
 }
 
-footer a {
-    color: #1e90ff;
+footer a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer P:hover {
+    color: #007bff;
     text-decoration: none;
 }
 
