@@ -47,8 +47,11 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-card">
-                <h3>我的第一個網站</h3>
-                <p>這是一個用 HTML/CSS 製作的個人介紹網頁。</p>
+                <h3 class="project-title">我的第一個網站</h3>
+                <div class="project-details">
+                    <p>這是一個用 HTML/CSS 製作的個人介紹網頁。</p>
+                    <p>功能包含響應式設計、基本排版、技能展示等。</p>
+                </div>
             </div>
             <div class="project-card">
                 <h3>待辦清單</h3>
@@ -78,6 +81,16 @@
             window.scrollTo({top:0, behavior: 'smooth'});
         })
 
+    </script>
+
+    <script>
+        const projectCards= document.querySelectorAll('.project-card');
+
+        projectCards.forEach(card=>{
+            card.addEventListener('click',()=>{
+                card.classList.toggle('active');
+            });
+        });
     </script>
     </body>
 </html>

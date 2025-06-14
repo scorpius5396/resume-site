@@ -87,6 +87,15 @@ section h2{
     */
 }
 
+.project-details{
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.project-card.active .project-details{
+    display: block;
+}
+
 footer{
     margin-top: 40px;
     text-align: center;
