@@ -5,6 +5,27 @@
     padding:0;
 }
 
+/*預設亮色模式*/
+body{
+    background-color:#f0f0f0;
+    color: #222;
+}
+
+/*深色模式主題*/
+body.dark-mode{
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+.dark-mode .project-card{
+    background-color: #333;
+    color: #eee;
+}
+
+button{
+    cursor:pointer;
+}
+
 body {
     font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -70,21 +91,17 @@ section h2{
     margin-top:20px;
 }
 
+.project-card{
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+    transition:all 0.3s ease;
+}
+
 .project-card:hover{
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    tranform: scale(1.05);
+    transform:scale(1.05);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3 ease;
-    /*
-    給元素加上陰影，讓它看起來有浮起來的感覺
-    0：水平偏移（陰影不左右移動）
-    2px：垂直偏移（陰影向下移動 2 像素）
-    6px：模糊半徑（陰影邊緣的模糊程度）
-    gba(0,0,0,0.1)：陰影顏色（黑色，透明度 0.1，很淡）=> rgba(紅, 綠, 藍, 透明度)
-    */
+    background-color: #fff;
 }
 
 .project-details{
@@ -157,10 +174,10 @@ footer P:hover {
     margin-top: 1rem;
 }
 
-.skill img{
+.skills img{
     transition: transform 0.3s ease;
 }
 
-.skill img:hover {
+.skills img:hover {
     transform: scale(1.1);
 }

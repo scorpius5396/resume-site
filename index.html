@@ -8,7 +8,7 @@
         <!--這是一個樣式表，請從 styles.css 載入樣式-->
     </head>
     <body>
-
+        <button id="toggle-theme">🌙</button>
         <header>
             <h1>楊雅涵Chrysta</h1>
             <p>網頁前端工程師</p>
@@ -54,8 +54,10 @@
                 </div>
             </div>
             <div class="project-card">
-                <h3>待辦清單</h3>
-                <p>一個能新增、刪除待辦事項的小工具</p>
+                <h3 class="project-title">待辦清單</h3>
+                <div class="project-details">
+                    <p>一個能新增、刪除待辦事項的小工具</p>
+                </div>
             </div>
         </section>
 
@@ -90,7 +92,23 @@
             card.addEventListener('click',()=>{
                 card.classList.toggle('active');
             });
+        });    
+    </script>
+
+     <script>
+        const toggleBtn= document.getElementById('toggle-theme');
+
+        toggleBtn.addEventListener('click',()=>{
+            document.body.classList.toggle('dark-mode');
+
+            //換按鈕圖示
+            if(document.body.classList.contains('dark-mode')){
+                toggleBtn.textContent='☀️';
+            }else {
+                toggleBtn.textContent='🌙';
+            }
         });
     </script>
+
     </body>
 </html>
