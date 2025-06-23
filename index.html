@@ -61,6 +61,21 @@
             </div>
         </section>
 
+        <section id="todo">
+            <h2>📝 我的待辦清單</h2>
+
+            <div class="todo-input">
+                <input type="text" id="new-task" placeholder="請輸入待辦事項"/>
+                <button id="add-task">+</button>
+            </div>
+
+            <ul class="todo-list">
+                <li>☐ 買貓咪保健品</li>
+                <li>☐ 練習切版</li>
+                <li>☐ 看完 JavaScript 教學影片</li>
+            </ul>
+        </section>
+
         <footer>
             <p>📧 scorpius5396@gmail.com | 🌐 <a href="#">GitHub</a></p>
         </footer>
@@ -109,6 +124,29 @@
             }
         });
     </script>
+
+<script>
+    const input= document.getElementById('new-task');
+    const addBtn= document.getElementById('add-task');
+    const todoList= document.querySelector('.todo-list');
+
+    //當點擊「＋」按鈕時
+    addBtn.addEventListener('click', ()=> {
+        const taskText= input.value.trim(); //移除前後空白
+        if (taskText !==''){
+            const li= document.createElement('li');
+            li.textContent=`☐ ${taskText}`;
+
+            // 點擊任意待辦項目時，將它刪除
+            li.addEventListener('click',()=>{
+                li.remove();
+            });
+
+            todoList.appendChild(li);
+            input.value=''; //清空輸入框
+        }
+    })
+</script>
 
     </body>
 </html>
