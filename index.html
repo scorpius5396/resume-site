@@ -130,6 +130,22 @@
     const addBtn= document.getElementById('add-task');
     const todoList= document.querySelector('.todo-list');
 
+    // ✅ 先對「已存在的項目」加上點擊事件
+    //先選取目前頁面中所有現有的<li>
+    const existingItems= document.querySelectorAll('.todo-list li');
+    
+    //幫每一個既有的項目加上點擊切換功能
+    existingItems.forEach(li => {
+        li.addEventListener('click',() =>{
+            if(li.textContent.startsWith('☐')){
+                li.textContent= li.textContent.replace('☐','☑️');
+            }else{
+                li.textContent= li.textContent.replace('☑️','☐');
+            }
+        });
+    });
+
+
     //當點擊「＋」按鈕時
     addBtn.addEventListener('click', ()=> {
         const taskText= input.value.trim(); //移除前後空白
@@ -137,15 +153,20 @@
             const li= document.createElement('li');
             li.textContent=`☐ ${taskText}`;
 
-            // 點擊任意待辦項目時，將它刪除
-            li.addEventListener('click',()=>{
-                li.remove();
+            // 點擊項目時，切換"完成/未完成" 狀態
+            li.addEventListener("click", ()=>{
+                if(li.textContent.startsWith('☐')) {
+                    li.textContent= li.textContent.replace('☐','☑️');
+                } else {
+                    li.textContent= li.textContent.replace('☑️','☐');
+                }
             });
 
             todoList.appendChild(li);
             input.value=''; //清空輸入框
         }
     })
+
 </script>
 
     </body>
